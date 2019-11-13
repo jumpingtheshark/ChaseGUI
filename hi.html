@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    </head>
+<body>
+
+<script>
+function hi()
+{
+       //https://alligator.io/js/fetch-api/
+    var a =1;
+    var b=2;
+    //alert("hello from the script");
+    fetch ("http://www.cnn.com")
+    .then(res => (res.text())
+    .then(res=> alert(res))
+    );
+
+
+    
+}
+/*
+https://stackoverflow.com/questions/10320232/how-to-accept-a-file-post
+
+
+14
+
+Here is a quick and dirty solution which takes uploaded file contents from the HTTP body and writes it to a file. I included a "bare bones" HTML/JS snippet for the file upload.
+
+Web API Method:
+
+[Route("api/myfileupload")]        
+[HttpPost]
+public string MyFileUpload()
+{
+    var request = HttpContext.Current.Request;
+    var filePath = "C:\\temp\\" + request.Headers["filename"];
+    using (var fs = new System.IO.FileStream(filePath, System.IO.FileMode.Create))
+    {
+        request.InputStream.CopyTo(fs);
+    }
+    return "uploaded";
+}
+HTML File Upload:
+
+<form>
+    <input type="file" id="myfile"/>  
+    <input type="button" onclick="uploadFile();" value="Upload" />
+</form>
+<script type="text/javascript">
+    function uploadFile() {        
+        var xhr = new XMLHttpRequest();                 
+        var file = document.getElementById('myfile').files[0];
+        xhr.open("POST", "api/myfileupload");
+        xhr.setRequestHeader("filename", file.name);
+        xhr.send(file);
+    }
+</script>
+*/
+
+</script>
+
+<h2>The Button Element</h2>
+<button type="button" onclick="hi()">Click Me!</button>
+<div id ="d"></div>
+ 
+</body>
+</html>
