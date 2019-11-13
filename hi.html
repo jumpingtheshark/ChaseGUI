@@ -9,14 +9,15 @@
 <script>
 function hi()
 {
+     $("#d")[0].innerHTML="duck"
+ 
        //https://alligator.io/js/fetch-api/
     var a =1;
     var b=2;
     //alert("hello from the script");
     fetch ("http://www.cnn.com")
-    .then(res => (res.text())
-    .then(res=> alert(res))
-    );
+    .then(res => (res.text()))
+    .then (res=> $("#d")[0].innerHTML=res);
 
 
     
@@ -57,14 +58,20 @@ HTML File Upload:
         xhr.setRequestHeader("filename", file.name);
         xhr.send(file);
     }
+    */
 </script>
-*/
+
 
 </script>
 
 <h2>The Button Element</h2>
 <button type="button" onclick="hi()">Click Me!</button>
-<div id ="d"></div>
+<br>
+<div>
+    <p id="d">
+    here
+</p>
+</div>
  
 </body>
 </html>
