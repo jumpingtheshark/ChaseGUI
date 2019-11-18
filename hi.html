@@ -7,6 +7,8 @@
 <body>
 
 <script>
+var x; 
+
 function hi()
 {
      $("#d")[0].innerHTML="duck"
@@ -17,7 +19,8 @@ function hi()
     //alert("hello from the script");
     fetch ("http://www.cnn.com")
     .then(res => (res.text()))
-    .then (res=> $("#d")[0].innerHTML=res);
+    .then (res=> $("#d")[0].innerHTML=res)
+    .then (res=>x=res.text);
 
 
     

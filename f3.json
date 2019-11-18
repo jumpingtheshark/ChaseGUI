@@ -1,0 +1,4 @@
+fetch ("http://www.cnn.com")
+    .then(res => (res.text()))
+    .then (res=> $("#d")[0].innerHTML=res)
+    .then (res=>x=res.text);
